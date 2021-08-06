@@ -1,0 +1,133 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>News!</title>
+    <link rel="icon" href="{% static 'images/bitcoin.png' %}" type="image/icon">
+    
+  </head>
+  <body>
+  <!-- navigation bar -->
+    <div class="navbar">  <!--to occupy the first layer or part-->
+        <div class="container">  <!--inside that part to create an container to hold everything at one place-->
+            <a  class="logo" href="index.html">Crypto<span>News!</span></a>
+            
+            <img id ="mobile-cta" class="mobile-menu" src="{% static 'images/menu.svg'%}">
+            <nav>
+                <img id ="mobile-exit" class="mobile-menu-exit" src="{% static 'images\exit.svg' alt="close navigatin" %}">
+                <ul class="primary-nav">
+                    <li class=""><a href="#table-1" >Price</a></li>
+                    <li><a href="#column" >News</a></li>
+                    <li><a href="#footer" >About</a></li> 
+                </ul>
+
+                <ul class="secondary-nav">
+                    <div class="search-container">
+                      <form action="{% url 'prices' %}" method="POST">
+                       {% csrf_token %}
+                        <input type="text" placeholder="Search.." name="quote">
+                        <div class="button">
+                        <!--<button  type="submit"><i class="fa fa-search"></i></button>-->
+                        </div>
+                      </form>
+                    </div>
+                     
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+
+  <!--section for table and News and the images at start-->
+    <section class="main">
+      <div class="container">
+          {% block content %}
+          {% endblock %}
+      </div>
+    </section>
+
+  <!--last part footer-->
+    <footer id="footer">
+      <section class="footer-section">
+       
+        <div class="container1">
+            
+
+            <div class="footer-left">
+             <h2>
+                Contact Us <hr></hr>
+             </h2>
+                <form action"">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name">
+
+                  <lable for="email">Email</label>
+                  <input type="email" id="email" name="email">
+
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                  <input type="submit" class="send-message-cta" value"Send message">
+
+                </form>
+            </div>
+            <span>&copy;2021 Atharv Ingole All rigths reserverd</span>
+            <h1>Designed by--Atharv Ingole </h1>
+            <div class="footer-right">
+              <h2>
+                About us <hr></hr>
+              </h2>
+                <div class="last">
+                  <h2>Atharv Ingole</h1>
+                  <div class="centerdiv">
+                            <a href="">
+                              <i class="fab fa-2x fa-facebook"></i>
+                            </a>
+                            <a href="">
+                              <i class="fab fa-2x fa-github"></i>
+                            </a>
+                            <a href="">
+                              <i class="fab fa-2x fa-instagram-square"></i>
+                            </a>
+                            <a href="">
+                              <i class="fab fa-2x fa-linkedin"></i>
+                            </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </footer>
+      
+
+      <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+                  nav = document.querySelector('nav')
+                  mobileBtnExit = document.getElementById('mobile-exit');
+
+            mobileBtn.addEventListener('click', () => {
+                nav.classList.add('menu-btn');
+            })
+
+            mobileBtnExit.addEventListener('click', () => {
+                nav.classList.remove('menu-btn');
+            })
+            
+    </script>
+  </body>
+</html>

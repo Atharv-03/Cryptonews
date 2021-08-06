@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+        
+
+    <div class="index_banner" >
+      <div class="container">
+                <div class="img">
+                        
+                </div>
+      </div>
+    </div>
+
+    
+<div class="table">
+    <h2>Price Table</h2> 
+    <div style="overflow-x:auto;">
+        <table id="table-1" >
+            <thead>
+                <tr>
+                    <th>Name  </th>
+                    <th>Price</th> 
+                    <th>Daily low</th> 
+                    <th>Daily high</th> 
+                    <th>MarketCap</th> 
+                </tr>
+            </thead>
+            <tbody>
+        {% for key,value in price.DISPLAY.items %}
+            <tr>
+                <td> {{key}} </td>
+                <td>  {{value.INR.PRICE}}</td>
+                <td>  {{value.INR.HIGHDAY}}</td>
+                <td>  {{value.INR.LOWDAY}}</td>
+                <td>  {{value.INR.MKTCAP}}</td>
+            </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>    
+<!--/////////////////////////////////////////////////////////////////////////////////////////-->
+       
+        
+                <div class="news">
+                <h2>News</h2> 
+                    <div id="column">
+                        
+                            {% for x in api.Data %}
+                                <div class="card">
+                                    <img src="{{x.imageurl}}" class="responsive"alt="Avatar" width="150" height="100">
+                                        <div class="card-details">
+                                            <h3>{{x.title}}</h3>
+                                            <p>{{x.body}}</p>
+                                        </div>
+                                </div>
+                            {% endfor %}
+                        
+                    </div>
+                </div>
+                </div>
+                
+               
+
+
+{% endblock %}

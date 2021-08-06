@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{% if crypto.Response %}
+    Sorry, {{quote}} doesn't exist. Please Try Again...
+{% endif %}
+    {% for key,value in crypto.DISPLAY.items %}
+        <strong> Name: </strong> {{key}}<br/>
+        <strong> Price: </strong> {{value.INR.PRICE}}<br/>
+        <strong>Daily High: </strong>{{value.INR.HIGHDAY}} <br/>
+        <strong>Daily low: </strong> {{value.INR.LOWDAY}}<br/>
+        <strong>MarkCap: </strong> {{value.INR.MKTCAP}} <br/>
+        <br><br/>
+    {% endfor %}
+
+{% endblock %}

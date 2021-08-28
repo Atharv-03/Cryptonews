@@ -128,6 +128,11 @@ nav{
         width:100%;
         padding:0;
 
+        form{
+            display:flex;
+            justify-content: space-between;
+            float: right;
+        }
 
         ul{
             display: flex;
@@ -264,7 +269,7 @@ background-position: center center; background-size: cover;
     }
     h2{
         font-size: 2em;
-        
+        text-align: center;
     }
 }
 
@@ -319,10 +324,16 @@ textarea{
 
     a{
         i{
+            padding-bottom: 1em;
+            align-items: center;
             &:hover{
                 color:white;
             }
         }
+    }
+
+    .centerdiv{
+        text-align: center;
     }
 }
 .footer-left{
@@ -334,7 +345,7 @@ textarea{
 .container1{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     background-color: #20272E;
     width:100%;
     padding:2em 2em 2em 2em;
@@ -352,7 +363,45 @@ textarea{
         padding:0.5em 0.5em 0.5em 0.5em;
     }
 }
+span{
+    margin-top: 1em;
+    align-content: center;
+}
 //for smooth scrolling through link
 html{
     scroll-behavior: smooth;
 }
+
+//contact us
+.main1{
+    align-items: center;
+    padding: 3em 3em 3em 3em;
+}
+
+.button2{
+    background-color: gray;
+    font-weight: bold;
+    font-size:1em;
+    border:none;
+    margin-bottom: 5em;
+    border-radius: 5em;
+    display:inline-block;
+    padding: .8em 2em;
+    width: unset;
+    cursor:pointer;
+    &:hover{
+        color:white;
+    }
+}
+
+
+form.example{
+    display: flex;
+    flex-wrap: wrap;
+    Button{
+        padding-top: 0.65em;
+        padding-bottom: 0.65em;
+        margin-left: 0.25em;
+    }
+}
+

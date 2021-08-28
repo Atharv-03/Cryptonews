@@ -24,7 +24,7 @@
   <!-- navigation bar -->
     <div class="navbar">  <!--to occupy the first layer or part-->
         <div class="container">  <!--inside that part to create an container to hold everything at one place-->
-            <a  class="logo" href="index.html">Crypto<span>News!</span></a>
+            <a  class="logo" href="/">Crypto<span>News!</span></a>
             
             <img id ="mobile-cta" class="mobile-menu" src="{% static 'images/menu.svg'%}">
             <nav>
@@ -33,15 +33,18 @@
                     <li class=""><a href="#table-1" >Price</a></li>
                     <li><a href="#column" >News</a></li>
                     <li><a href="#footer" >About</a></li> 
+                    <li><a href="/contact" >Contact Us</a></li> 
                 </ul>
 
                 <ul class="secondary-nav">
                     <div class="search-container">
-                      <form action="{% url 'prices' %}" method="POST">
+                      <form class="example" action="{% url 'prices' %}" method="POST">
                        {% csrf_token %}
+                       <div class="Search">
                         <input type="text" placeholder="Search.." name="quote">
-                        <div class="button">
-                        <!--<button  type="submit"><i class="fa fa-search"></i></button>-->
+                        </div>
+                        <div class="Button">    
+                        <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                       </form>
                     </div>
@@ -63,33 +66,10 @@
   <!--last part footer-->
     <footer id="footer">
       <section class="footer-section">
-       
         <div class="container1">
-            
-
-            <div class="footer-left">
-             <h2>
-                Contact Us <hr></hr>
-             </h2>
-                <form action"">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name">
-
-                  <lable for="email">Email</label>
-                  <input type="email" id="email" name="email">
-
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" cols="30" rows="10"></textarea>
-
-                  <input type="submit" class="send-message-cta" value"Send message">
-
-                </form>
-            </div>
-            <span>&copy;2021 Atharv Ingole All rigths reserverd</span>
-            <h1>Designed by--Atharv Ingole </h1>
             <div class="footer-right">
               <h2>
-                About us <hr></hr>
+                 About us<hr></hr>
               </h2>
                 <div class="last">
                   <h2>Atharv Ingole</h1>
@@ -107,6 +87,7 @@
                               <i class="fab fa-2x fa-linkedin"></i>
                             </a>
                   </div>
+                  <span>&copy;2021 Atharv Ingole All rights reserverd</span>
                 </div>
             </div>
         </div>
